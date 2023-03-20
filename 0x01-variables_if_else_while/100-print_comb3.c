@@ -23,7 +23,7 @@ int main(void)
 		j = j + 1;
 		}
 	i = i + 1;
-	j = j + 1;
+	j = i + 1;
 	}
 	putchar('\n');
 	return (0);
