@@ -9,7 +9,7 @@ int main(void)
 	int f2 = 1;
 	int i, f;
 
-	for (i = 0; i <= 50; i++)
+	for (i = 1; i <= 50; i++)
 	{
 	f = f1 + f2;
 		if (i != 50)
