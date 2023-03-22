@@ -6,9 +6,9 @@
  */
 int main(void)
 {
-	long long f1 = 0;
-	long long f2 = 1;
-	long long f;
+	unsigned long f1 = 0;
+	unsigned long f2 = 1;
+	unsigned long f;
 	int i;
 
 	for (i = 1; i <= 98; i++)
