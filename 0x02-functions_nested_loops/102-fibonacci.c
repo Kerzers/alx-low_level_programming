@@ -5,9 +5,10 @@
  */
 int main(void)
 {
-	int f1 = 0;
-	int f2 = 1;
-	int i, f;
+	double int f1 = 0;
+	double int f2 = 1;
+	double int f;
+	int i;
 
 	for (i = 1; i <= 50; i++)
 	{
