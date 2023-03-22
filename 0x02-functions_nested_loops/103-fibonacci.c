@@ -11,13 +11,13 @@ int main(void)
 	long f2 = 1;
 	long f = 0;
 	int i;
-	unsigned long sum = 0;
+	unsigned long sum = 1;
 
 	for (i = 1; f <= 4000000; i++)
 	{
+	if (f % 2 != 0)
+	sum = sum + f;
 	f = f1 + f2;
-		if (f % 2 != 0)
-		sum = sum + f;
 	f1 = f2;
 	f2 = f;
 	}
