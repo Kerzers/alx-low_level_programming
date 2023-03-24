@@ -7,7 +7,8 @@
 int main(void)
 {
 	long int n = 612852475143;
-	int i, j, test;
+	long int i;
+	int j, test;
 
 	for (i = n / 2; i > 1; i--)
 	{
@@ -23,8 +24,11 @@ int main(void)
 			}
 		}
 	}
+	if (test == 1)
+	{
+	printf("%ld\n", i);
+	break;
 	}
-	if (test)
-	printf("%d\n", i);
+	}
 	return (0);
 }
