@@ -43,7 +43,7 @@ int right_eq_left_ptr(char *s, int len, int i)
 {
 	char *p;
 
-	if (i >= (len / 2) + 1)
+	if (i > (len / 2) + 1)
 		return (1);
 	p = &s[len - 1 - i];
 	if (*s == *p)
