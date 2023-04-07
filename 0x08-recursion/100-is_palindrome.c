@@ -19,7 +19,7 @@ int is_palindrome(char *s)
 	}
 	else
 		return (1);
-}	
+}
 /**
  * _strlen_recursion - prints the length of a string
  * @s: pointer to a string
@@ -43,8 +43,8 @@ int right_eq_left_ptr(char *s, int len, int i)
 {
 	char *p;
 
-	if (i >= len / 2)
-               return (1);
+	if (i >= (len / 2) + 1)
+		return (1);
 	p = &s[len - 1 - i];
 	if (*s == *p)
 		return (right_eq_left_ptr(s + 1, len - 1, i + 1));
