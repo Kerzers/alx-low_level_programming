@@ -10,7 +10,7 @@
 char **strtow(char *str)
 {
 	char **s;
-	int i = 0, sum = 0, j, k = 0, cp = 0, wordN = 0, spaceN = 0, ind = 0;
+	int i = 0, j, k = 0, cp = 0, wordN = 0, spaceN = 0, ind = 0;
 	int *len;
 
 	if (str == NULL || (str != NULL && strlen(str) == 0))
@@ -24,40 +24,28 @@ char **strtow(char *str)
 		}
 	i++;
 	}
-	printf("str %c\n",*str);
-	printf("spaceN %d\n", spaceN);
 	len = malloc(sizeof(int) * (spaceN + 1));
 	if (len == NULL)
 		return (NULL);
 	i = 0;
 	while (str[i] != '\0')
 	{
-		printf("str[%d]= %c\n", i, str[i]);
 		if (str[i] != 32)
-		{
 			cp++; /* number of character in each word */
-		}
-		else
+		else if (cp != 0)
 		{
-			printf("i=%d\n", i);
 			len[k] = cp; /* len[k] contains lenght of the word number k */
-			printf("len[%d]= %d\n", k, len[k]);
-			sum += len[k];
-			printf("sum %d\n", sum);
 			k++;
 			cp = 0;
 		}
 	i++;
 	}
-	if (str[i] == '\0')
+	if (str[i] == '\0' && cp)
 	{
 	len[k] = cp; /* len[k] contains lenght of the word number k */
-	printf("len[%d]= %d\n", k, len[k]);
-	sum += len[k];
 	k++;
 	}
 	wordN = k; /* number of words in str */
-	printf("wordN = %d\n", wordN);
 	s = malloc(sizeof(char *) * wordN);
 	if (s == NULL)
 		return (NULL);
@@ -65,7 +53,8 @@ char **strtow(char *str)
 	{
 	s[j] = malloc(sizeof(char) * len[j]);
 	if (s[j] == NULL)
-	{	for (j = j - 1; j >= 0; j--)
+	{
+		for (j = j - 1; j >= 0; j--)
 			free(s[j]);
 		free(s);
 		return (NULL);
@@ -82,15 +71,10 @@ char **strtow(char *str)
 			*(s[j] + k) = str[ind];
 			k++;
 			}
-		printf("index = %d\n", ind);
 		ind++;
 		}
-	printf("j = %d\n", j);
-	*(s[j] + k) = '\n';
-	printf("%d\n", i);
 	i++;
 	}
-	printf("j = %d et i = %d\n", j, i);
 	s[j] = NULL;
 	return (s);
 }
