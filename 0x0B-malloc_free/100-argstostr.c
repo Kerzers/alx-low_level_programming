@@ -12,8 +12,7 @@ char *argstostr(int ac, char **av)
 {
 	char *s;
 	int *a;
-	int i, k, sum = 0;
-	size_t j;
+	int i, j, k, len, sum = 0;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
@@ -25,17 +24,17 @@ char *argstostr(int ac, char **av)
 		a[i] = strlen(av[i]);
 		sum += a[i];
 	}
-	s = malloc(sizeof(char) * sum + ac);
+	len = sum + ac;
+	s = malloc(sizeof(char) * len);
 	if (s == NULL)
 		return (NULL);
 	i = 0;
-	for (j = 0; j < strlen(s); j++)
+	for (j = 0; j < len; j++)
 	{
 		k = 0;
 		while (k < a[i])
 		{
 			s[j] = *(av[i] + k);
-			printf("%c\n", s[j]);
 			k++;
 			j++;
 		}
