@@ -31,10 +31,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		max = new_size;
 	else
 		max = old_size;
-	p = malloc(new_size * sizeof(char));
+	p = malloc(max * sizeof(char));
 	if (p == NULL)
 		return (NULL);
-	for (i = 0; i < max; i++)
+	for (i = 0; i < old_size; i++)
 		p[i] = same[i];
 	free(ptr);
 	return (p);
