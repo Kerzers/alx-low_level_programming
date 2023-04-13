@@ -10,7 +10,7 @@
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *p, *same;
-	unsigned int i;
+	unsigned int i, max;
 
 	if (ptr != NULL)
 		same = ptr;
@@ -28,10 +28,13 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 	if (new_size > old_size)
-		p = malloc(new_size * sizeof(char));
+		max = new_size;
+	else
+		max = old_size;
+	p = malloc(max * sizeof(char));
 	if (p == NULL)
 		return (NULL);
-	for (i = 0; i < old_size; i++)
+	for (i = 0; i < max; i++)
 		p[i] = same[i];
 	free(ptr);
 	return (p);
