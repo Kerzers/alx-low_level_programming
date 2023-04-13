@@ -12,9 +12,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	char *p, *same;
 	unsigned int i;
 
-	while (ptr != NULL)
+	if (ptr != NULL)
 		same = ptr;
-	if (ptr == NULL)
+	else
 	{
 		p = malloc(new_size * sizeof(char));
 		if (p == NULL)
