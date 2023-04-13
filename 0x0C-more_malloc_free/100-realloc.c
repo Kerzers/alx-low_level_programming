@@ -31,7 +31,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		max = new_size;
 	else
 		max = old_size;
-	p = malloc(max * sizeof(char));
+	p = malloc(new_size * sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	for (i = 0; i < max; i++)
