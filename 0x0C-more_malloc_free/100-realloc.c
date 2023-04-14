@@ -10,7 +10,7 @@
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *p, *same;
-	unsigned int i, max;
+	unsigned int i, min;
 
 	if (ptr != NULL)
 		same = ptr;
