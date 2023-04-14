@@ -27,14 +27,14 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		free(ptr);
 		return (NULL);
 	}
-	if (new_size > old_size)
-		max = new_size;
+	if (new_size < old_size)
+		min = new_size;
 	else
-		max = old_size;
-	p = malloc(max * sizeof(char));
+		min = old_size;
+	p = malloc(new_size * sizeof(char));
 	if (p == NULL)
 		return (NULL);
-	for (i = 0; i < old_size; i++)
+	for (i = 0; i < min; i++)
 		p[i] = same[i];
 	free(ptr);
 	return (p);
