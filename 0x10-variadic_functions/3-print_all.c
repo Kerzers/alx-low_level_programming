@@ -39,7 +39,8 @@ void print_all(const char * const format, ...)
 				printf("%s%s", sp, s);
 				break;
 			default:
-				break;
+				i++;
+				continue;
 		}
 		sp = ", ";
 		i++;
