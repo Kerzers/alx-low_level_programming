@@ -17,7 +17,8 @@ void print_binary(unsigned long int n)
 	{
 		for (i = 0; i < 64; i++)
 			_putchar('1');
-	}	
+	return;
+	}
 	for (i = 0; n >> i; i++)
 		len++;
 	for (i = len - 1; i >= 0; i--)
