@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  *create_file - creates a file
@@ -29,7 +30,7 @@ int create_file(const char *filename, char *text_content)
 		close(fd);
 		return (1);
 	}
-	nw = write(fd, text_content, sizeof(text_content));
+	nw = write(fd, text_content, strlen(text_content));
 	if (nw == -1)
 		return (-1);
 	close(fd);
