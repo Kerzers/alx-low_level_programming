@@ -11,7 +11,7 @@ size_t dlistint_len(const dlistint_t *h)
 	size_t count = 0;
 	dlistint_t *current;
 
-	current = (dlistint *)h;
+	current = (dlistint_t *)h;
 	while (current)
 	{
 		count++;
