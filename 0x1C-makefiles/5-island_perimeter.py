@@ -21,4 +21,4 @@ def island_perimeter(grid):
                     count -= 2
                 if j > 0 and grid[i][j - 1]:
                     count -= 2
-    return(count)
+    return count
